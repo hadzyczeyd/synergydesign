@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Order - Synergy Design</title>
+    <meta name="title" content="Synergy Design" />
+
+    <meta
+      name="description"
+      content="Pomažemo poduzetnicima da pokrenu svoje online poslovanje s jedinstvenim brend identitetom."
+    />
+    <meta
+      name="keywords"
+      content="Web Development, Web Design, Agency, Design, Software, Website, web dizajn, dizajn, logo dizajn, web razvoj"
+    />
+    <meta name="robots" content="index, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Zejd Hadzic" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#118290",
+              scnd: "#98DDE5",
+              bgr: "#212121",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        font-family: "Bellota Text", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        scroll-behavior: smooth;
+      }
+      body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      body{
+        background-image: url('Background.png');
+        background-size: contain;
+      }
+      body::-webkit-scrollbar-track {
+        background-color: #212121;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #118290;
+      }
+    </style>
+  </head>
+  <body class="bg-[#212121]">
+
+    <nav x-data="{ isOpen: false }" class="fixed z-20 w-full bg-bgr">
+      <div class="container px-6 py-3 mx-auto md:flex">
+        <div class="flex items-center justify-between">
+          <a
+            class="flex text-main items-center font-semibold justify-center mx-2"
+            href="https://synergydesign.io/index"
+          >
+            <img class="w-auto h-6 md:h-12" src="providna.png" alt="logo" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <div class="flex lg:hidden">
+            <button
+              x-cloak
+              @click="isOpen = !isOpen"
+              type="button"
+              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+              aria-label="toggle menu"
+            >
+              <svg
+                x-show="!isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 8h16M4 16h16"
+                />
+              </svg>
+
+              <svg
+                x-show="isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div
+          x-cloak
+          :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+          class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-bgr md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
+        >
+          <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
+            <a
+              href="https://synergydesign.io/index#Home"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Home</a
+            >
+            <a
+              href="https://synergydesign.io/index#About"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >About</a
+            >
+            <a
+              href="https://synergydesign.io/index#Why"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Why Us</a
+            >
+            <a
+              href="https://synergydesign.io/index#Services"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Services</a
+            >
+            <a
+              href="https://calendly.com/synergy-design/consultation-call"
+              target="_blank"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Consultations</a
+            >
+            <a
+              href="https://synergydesign.io/index#Contact"
+              class="px-2.5 py-2 text-white hover:text-bgr transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Contact</a
+            >
+          </div>
+
+          <div class="relative mt-4 flex items-center justify-center md:mt-0">
+            <a href="https://synergydesign.io/order"
+              ><button
+                class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-main rounded-lg hover:bg-scnd hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+              >
+                Order
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- component -->
+    <div class="flex justify-center items-center w-full py-24 bg-transparent">
+      <div
+        class="w-full md:w-1/2 p-8 m-4"
+      >
+        <h1 class="block w-full text-center text-main text-3xl font-bold mb-6">
+          Order a Service
+        </h1>
+        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+          <input
+            type="hidden"
+            name="apikey"
+            value="ee898561-a32b-46f9-97a7-500ab48f7798"
+          />
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://synergydesign.io/thanks.html"
+          />
+          <input type="hidden" name="subject" value="New Order" />
+          <div class="flex flex-col mb-4">
+            <label
+              class="mb-2 font-semibold text-lg text-white"
+              for="first_name"
+              >Name</label
+            >
+            <input
+              class="border py-2 px-3 rounded-lg text-grey-800"
+              type="text"
+              name="First_Name"
+              id="first_name"
+              required
+            />
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-semibold text-lg text-white" for="last_name"
+              >Business Name</label
+            >
+            <input
+              class="border py-2 px-3 rounded-lg text-grey-800"
+              type="text"
+              name="Business_Name"
+              id="business_name"
+            />
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-semibold text-lg text-white" for="email"
+              >E-Mail</label
+            >
+            <input
+              class="border py-2 rounded-lg px-3 text-grey-800"
+              type="email"
+              name="Email"
+              id="email"
+              required
+            />
+          </div>
+
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-semibold text-lg text-white" for="Select"
+              >Choose a Service</label
+            >
+            <select
+              required
+              name="Service"
+              class="border rounded-lg py-2 px-3 text-grey-800"
+            >
+              <option>Web Design</option>
+              <option>Logo Design</option>
+              <option>Consultations</option>
+            </select>
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-semibold text-lg text-white" for="Select"
+              >Choose a Service Plan</label
+            >
+            <select
+              name="Plan"
+              required
+              class="border rounded-lg py-2 px-3 text-grey-800"
+            >
+              <option>Starter</option>
+              <option>Pro</option>
+              <option>Full</option>
+            </select>
+          </div>
+          <div class="flex flex-col mb-4">
+            <label class="mb-2 font-semibold text-lg text-white" for="textarea"
+              >Message</label
+            >
+            <textarea
+              class="border rounded-lg py-2 px-3 text-grey-800"
+              name="Message"
+              id="textarea"
+              required
+              placeholder="Write a detailed explanation of what you need. For more information, we will send you an email."
+            ></textarea>
+          </div>
+          <button
+            class="block bg-main hover:bg-[#fbf7f5] hover:text-main border border-main text-[#fbf7f5] uppercase text-lg mx-auto p-2 transition-all px-8 rounded-full"
+            type="submit"
+          >
+            Order
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

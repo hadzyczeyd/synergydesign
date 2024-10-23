@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Home - Synergy Design</title>
+    <meta name="title" content="Synergy Design" />
+
+    <meta
+      name="description"
+      content="We help businesses expand their presence with web design and branding services."
+    />
+    <meta
+      name="keywords"
+      content="Web Development, Web Design, Agency, Design, Software, Website, web dizajn, dizajn, logo dizajn, web razvoj"
+    />
+    <meta name="robots" content="index, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Zejd Hadzic" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/da5b543a68.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: "#118290",
+              scnd: "#98DDE5",
+              bgr: "#212121",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        font-family: "Bellota Text", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        scroll-behavior: smooth;
+      }
+      body{
+        background-image: url('Background.png');
+        background-size: contain;
+      }
+
+      body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      
+
+      body::-webkit-scrollbar-track {
+        background-color: #212121;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #118290;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav x-data="{ isOpen: false }" class="fixed z-20 w-full bg-bgr border-b border-slate-500">
+      <div class="container px-6 py-3 mx-auto md:flex">
+        <div class="flex items-center justify-between">
+          <a
+            class="flex text-main items-center font-semibold justify-center mx-2"
+            href="https://synergydesign.io/index"
+          >
+            <img class="w-auto h-6 md:h-12" src="providna.png" alt="logo" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <div class="flex lg:hidden">
+            <button
+              x-cloak
+              @click="isOpen = !isOpen"
+              type="button"
+              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+              aria-label="toggle menu"
+            >
+              <svg
+                x-show="!isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 8h16M4 16h16"
+                />
+              </svg>
+
+              <svg
+                x-show="isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div
+          x-cloak
+          :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+          class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-bgr md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
+        >
+          <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
+            <a
+              href="https://synergydesign.io/index#Home"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Home</a
+            >
+            <a
+              href="#About"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              ></i>About</a
+            >
+            <a
+              href="#Why"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              ></i>Why Us</a
+            >
+            <a
+              href="#Services"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Services</a
+            >
+            <a
+              href="https://calendly.com/synergy-design/consultation-call"
+              target="_blank"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Consultations</a
+            >
+            <a
+              href="#Contact"
+              class="px-2.5 py-2 text-white hover:text-bgr font-semibold transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
+              >Contact</a
+            >
+          </div>
+
+          <div class="relative mt-4 flex items-center justify-center md:mt-0">
+            <a href="https://synergydesign.io/order"
+              ><button
+                class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-main rounded-lg hover:bg-scnd hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+              >
+                Order
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="bg-[#21212180] py-8" id="Home">
+      <div
+        class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row"
+      >
+        <div class="flex justify-center xl:w-1/2 select-none">
+          <img
+            class="sm:w-[40rem] sm:h-[30rem] flex-shrink-0 object-fit"
+            src="monitor.png"
+            alt=""
+          />
+        </div>
+
+        <div
+          class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0"
+        >
+          <h2
+            class="text-2xl font-semibold tracking-tight text-white xl:text-3xl"
+          >
+            Web Design for New Businesses
+          </h2>
+
+          <p class="block max-w-2xl text-lg mt-4 text-slate-200">
+            We know that there is no one-size-fits-all solution. Every business
+            is unique, as is our approach. We work closely with you to
+            understand your vision, industry, and audience, which allows us to
+            create a website that truly reflects your brand identity.
+          </p>
+
+          <div class="mt-6 sm:-mx-2 md:flex-row flex flex-col">
+            <div class="md:flex-row flex flex-col">
+              <a
+                href="order.html"
+                class="inline-flex items-center justify-center font-semibold w-full px-4 text-sm py-2.5 overflow-hidden text-white transition-colors duration-300 bg-main rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-scnd hover:text-black focus:ring focus:ring-gray-300 focus:ring-opacity-80"
+              >
+                <span class="mx-2 text-lg"> Order </span>
+              </a>
+
+              <form
+                class="bg-bgr flex md:w-fit sm:w-3/4 md:m-0 my-4"
+                name="submit-to-google-sheet"
+              >
+                <input
+                  class="border-2 rounded-lg bg-bgr rounded-r-none border-white border-r-0 outline-none px-4 py-2 h-12 md:w-96 text-lg"
+                  type="email"
+                  name="Email"
+                  placeholder="Sign Up for our newsletter"
+                  required
+                />
+                <button
+                  class="bg-bgr rounded-l-none rounded-lg border-2 border-white outline-none h-12 w-12 flex items-center justify-center pointer"
+                  type="submit"
+                >
+                  <img src="send.png" class="w-[30px] " alt="" />
+                </button>
+              </form>
+            </div>
+
+            <span id="msg" class="pl-2 text-main mt-2 block font-medium"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="text-main select-none pb-12 body-font bg-[#fbf7f5]">-->
+    <!--  <div class="container px-5 py-22 mx-auto">-->
+    <!--    <div class="flex flex-wrap -m-4 text-center">-->
+    <!--      <div class="p-4 sm:w-1/4 w-1/2">-->
+    <!--        <h2 class="title-font text-main font-medium sm:text-4xl text-3xl">-->
+    <!--          4-->
+    <!--        </h2>-->
+    <!--        <p class="leading-relaxed">Satisfied Clients</p>-->
+    <!--      </div>-->
+    <!--      <div class="p-4 sm:w-1/4 w-1/2">-->
+    <!--        <h2 class="title-font text-main font-medium sm:text-4xl text-3xl">-->
+    <!--          3-->
+    <!--        </h2>-->
+    <!--        <p class="leading-relaxed">Websites Designed</p>-->
+    <!--      </div>-->
+    <!--      <div class="p-4 sm:w-1/4 w-1/2">-->
+    <!--        <h2 class="title-font text-main font-medium sm:text-4xl text-3xl">-->
+    <!--          1-->
+    <!--        </h2>-->
+    <!--        <p class="leading-relaxed">Logo's Designed</p>-->
+    <!--      </div>-->
+    <!--      <div class="p-4 sm:w-1/4 w-1/2">-->
+    <!--        <h2 class="title-font text-main font-medium sm:text-4xl text-3xl">-->
+    <!--          3-->
+    <!--        </h2>-->
+    <!--        <p class="leading-relaxed">Services</p>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</section>-->
+
+    <section class="bg-[#21212180]" id="About">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div class="max-w-3xl">
+          <h2 class="font-semibold text-white text-3xl">What is Web Design?</h2>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          <div class="select-none h-64 overflow-hidden lg:h-full sm:h-80">
+            <img
+              alt=""
+              src="webdesign.png"
+              class="relative inset-0 h-full w-full object-scale-down"
+            />
+          </div>
+
+          <div class="lg:py-16">
+            <article class="space-y-4 text-slate-200">
+              <p class="text-xl text-balanced">
+                Web design is the process of planning, creating, and maintaining
+                websites. It involves the layout and arrangement of elements on
+                the page, choosing colors, fonts, graphics, and content to
+                achieve a functional and aesthetically pleasing website. Web
+                design encompasses the visual aspect of the site, as well as the
+                user experience (UX), meaning the site should be easy to
+                navigate and provide users with what they're looking for in an
+                intuitive way.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-white bg-[#21212180] body-font" id="Why">
+      <div class="container px-5 py-20 mx-auto">
+        <div class="text-center mb-20">
+          <h1
+            class="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4"
+          >
+            Why Us?
+          </h1>
+          <p class="text-lg text-slate-200 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+            We deliver twice as fast at the same price. How? We accept only one
+            project at a time—completely dedicating ourselves to yours to
+            deliver the results you want.
+          </p>
+        </div>
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Premium Quality</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Extra Fast Delivery</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">100% Focused On You</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Customized Solutions</span>
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium"
+                >Client-Centric Approach</span
+              >
+            </div>
+          </div>
+          <div class="p-2 sm:w-1/2 w-full">
+            <div
+              class="bg-bgr rounded border-2 border-main flex p-4 h-full items-center"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                class="text-main w-6 h-6 flex-shrink-0 mr-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+              <span class="title-font font-medium">Only 3 Services</span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="flex mx-auto mt-16 text-white bg-main border-2 border-main py-2 px-8 focus:outline-none hover:bg-transparent hover:text-main transition-all rounded-lg text-lg"
+        >
+          <a href="https://synergydesign.io/order"> Order </a>
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-[#21212180] py-20" id="Services">
+      <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-white capitalize lg:text-3xl">
+          What exactly 
+          do we do?</span>
+        </h1>
+
+        <p class="mt-4 text-slate-300 text-xl xl:mt-6">
+          Here is a brief overview of the services we offer and what we can do
+          for you.
+        </p>
+
+        <div
+          class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3"
+        >
+          <div
+            class="p-8 space-y-3 border border-white bg-bgr rounded-xl border-l-4 border-b-4 hover:scale-95 transition-all"
+          >
+            <span class="inline-block text-main">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8"
+                viewBox="0 0 24 24"
+                style="fill: #ffffff"
+              >
+                <path
+                  d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"
+                ></path>
+              </svg>
+            </span>
+
+            <h1 class="text-xl font-semibold text-white capitalize">
+              Web Design & SEO
+            </h1>
+
+            <p class="text-slate-200 text-pretty">
+              We work on every aspect of a website that people interact with to
+              ensure that the site is simple and efficient, allows users to
+              quickly find the information they need, and looks visually
+              appealing. A good website is an investment.
+            </p>
+            <div
+              class="flex items-center md:flex-row flex-col pt-4 justify-between"
+            >
+              <a href="get-a-website.html"
+                ><button
+                  class="bg-main font-semibold p-2 pl-4 my-2 pr-4 rounded-full text-[#fbf7f5] border-2 border-main hover:bg-[#fbf7f5] hover:text-main transition-all"
+                >
+                  Order a Website
+                </button></a
+              >
+              <a
+                href="web-design.html"
+                class="text-main font-semibold transition-all hover:text-white"
+                >Learn More
+                <i class="fa-solid pl-2 text-sm fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="p-8 space-y-3 border border-white bg-bgr rounded-xl border-l-4 border-b-4 hover:scale-95 transition-all"
+          >
+            <span class="inline-block text-main">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                style="fill: #ffffff"
+              >
+                <path
+                  d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"
+                ></path>
+                <circle cx="7.5" cy="14.5" r="1.5"></circle>
+                <circle cx="7.5" cy="10.5" r="1.5"></circle>
+                <circle cx="10.5" cy="7.5" r="1.5"></circle>
+                <circle cx="14.5" cy="7.5" r="1.5"></circle>
+              </svg>
+            </span>
+
+            <h1 class="text-xl font-semibold text-white capitalize">
+              Logo Design
+            </h1>
+
+            <p class="text-slate-200 text-pretty">
+              The logo is the face of your business, the ornament of your brand,
+              and the first thing your customers see. It’s not enough to choose
+              the design that looks the best. You need to think about
+              scalability, brand goals, and competition. That's the part we take
+              care of.
+            </p>
+
+            <div
+              class="flex items-center md:flex-row flex-col pt-4 justify-between"
+            >
+              <a href="get-a-logo.html"
+                ><button
+                  class="bg-main p-2 font-semibold my-2 pl-4 pr-4 rounded-full text-[#fbf7f5] border-2 border-main hover:bg-[#fbf7f5] hover:text-main transition-all"
+                >
+                  Order a Logo
+                </button></a
+              >
+              <a
+                href="logo-design.html"
+                class="text-main font-semibold transition-all hover:text-white"
+                >Learn More<i class="fa-solid pl-2 text-sm fa-arrow-right"></i
+              >
+                </a>
+            </div>
+          </div>
+
+          <div
+            class="p-8 space-y-3 border border-white bg-bgr rounded-xl border-l-4 border-b-4 hover:scale-95 transition-all"
+          >
+            <span class="inline-block text-main">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                viewBox="0 0 24 24"
+                style="fill: #ffffff"
+              >
+                <path
+                  d="M5 8h2V6h3.252L7.68 18H5v2h8v-2h-2.252L13.32 6H17v2h2V4H5z"
+                ></path>
+              </svg>
+            </span>
+
+            <h1 class="text-xl font-semibold text-white capitalize">
+              Color Palette & Typography
+            </h1>
+
+            <p class="text-slate-200 text-pretty">
+              We also offer free consultations regarding color and font
+              coordination on websites and promotional materials. This is a part
+              of your business that will make you stand out in the crowd and
+              allow your customers to recognize you instantly.
+            </p>
+            <div
+              class="flex items-center md:flex-row flex-col pt-4 justify-between"
+            >
+              <a
+                ><button
+                  class="bg-main font-semibold p-2 mx-auto my-2 pl-4 pr-4 items-start flex rounded-full text-[#fbf7f5] border-2 border-main hover:bg-[#fbf7f5] hover:text-main transition-all"
+                >
+                  <link
+                    href="https://assets.calendly.com/assets/external/widget.css"
+                    rel="stylesheet"
+                  />
+                  <script
+                    src="https://assets.calendly.com/assets/external/widget.js"
+                    type="text/javascript"
+                    async
+                  ></script>
+                  <a
+                    href=""
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/synergy-design/consultation-call'});return false;"
+                    >Consultations</a
+                  >
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#21212180]">
+      <div class="h-[32rem]">
+          <div class="container px-6 py-10 mx-auto">
+              <h1 class="text-2xl font-semibold text-center text-white capitalize lg:text-3xl ">Our executive team</h1>
+  
+              <div class="flex justify-center mx-auto mt-6">
+                  <span class="inline-block w-40 h-1 bg-main rounded-full"></span>
+                  <span class="inline-block w-3 h-1 mx-1 bg-main rounded-full"></span>
+                  <span class="inline-block w-1 h-1 bg-main rounded-full"></span>
+              </div>
+  
+              <p class="max-w-2xl mx-auto mt-6 text-center text-white">
+                  Meet our power team - the creative minds who'll make setting up your online presence easier!
+              </p>
+          </div>
+      </div>
+  
+      <div class="container px-6 py-10 mx-auto -mt-72 sm:-mt-80 md:-mt-96">
+          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
+              <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl ">
+
+                  <img class="object-cover w-1/2 rounded-xl aspect-square" src="https://eu.ui-avatars.com/api/?name=Zejd+Hadzic&size=250" alt="">
+  
+                  <h1 class="mt-4 text-2xl font-semibold text-white capitalize ">zejd hadzic</h1>
+  
+                  <p class="mt-2 text-gray-200 capitalize ">Founder - lead developer</p>
+              </div>
+  
+              <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl ">
+                  <img class="object-cover w-1/2 rounded-xl aspect-square" src="mahir.jpg" alt="">
+  
+                  <h1 class="mt-4 text-2xl font-semibold text-white capitalize ">mahir hajdarevic</h1>
+  
+                  <p class="mt-2 text-gray-200 capitalize ">copywriter - marketing officer</p>
+  
+              </div>
+  
+              <div class="flex flex-col items-center p-4 border sm:p-6 rounded-xl ">
+                  <img class="object-cover w-1/2 rounded-xl aspect-square" src="https://eu.ui-avatars.com/api/?name=Tarik+Brkic&size=250" alt="">
+  
+                  <h1 class="mt-4 text-2xl font-semibold text-white capitalize ">tarik brkic</h1>
+  
+                  <p class="mt-2 text-gray-200 capitalize ">graphic designer</p>
+  
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <section
+      class="text-gray-600 bg-[#21212180] flex flex-row body-font grid grid-2 relative"
+      id="Contact"
+    >
+      <form action="https://api.web3forms.com/submit" method="POST" id="form">
+        <input
+          type="hidden"
+          name="apikey"
+          value="ee898561-a32b-46f9-97a7-500ab48f7798"
+        />
+        <input type="hidden" name="subject" value="New Synergy Message" />
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white"
+            >
+              Contact Us
+            </h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-white">
+              Have a question? Send us a message, we will try to reply as soon
+              as possible.
+            </p>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-white"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full bg-bgr rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-white"
+                    >E-Mail</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full bg-bgr rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-white"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="w-full bg-bgr rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <input
+                type="hidden"
+                name="_next"
+                value="https://synergydesign.io/thanks.html"
+              />
+              <div class="p-2 w-full flex items-center justify-center">
+                <button
+                  type="submit"
+                  class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-main rounded-lg hover:bg-scnd hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+                >
+                  Send
+                </button>
+              </div>
+              <div
+                class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+              >
+                <a href="https://formsubmit.co/el/cotalo" class="text-main font-semibold hover:text-white transition-all text-xl">hello@synergydesign.io</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer
+      class="text-gray-600 bg-bgr relative w-full bottom-0 body-font"
+    >
+      <div
+        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
+      >
+        <a
+          class="flex text-main text-2xl font-semibold items-center justify-center mx-2"
+          href="index.html"
+        >
+          synergy design
+        </a>
+        <p
+          class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
+        >
+          © 2024 synergy —
+          <a
+            href="https://www.instagram.com/synergydesign.io"
+            class="text-main font-semibold ml-1"
+            rel="noopener noreferrer"
+            target="_blank"
+            >@synergydesign.io</a
+          >
+        </p>
+        <span
+          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
+        >
+          <a
+            class="ml-3 text-gray-500 hover:pointer hover:text-white transition-all "
+            href="https://www.freeprivacypolicy.com/live/6000ecf3-644d-4e98-aa22-fa6e3a056249"
+            target="_blank"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            class="ml-3 text-gray-500 hover:pointer hover:text-white transition-all "
+            target="_blank"
+            href="refund-policy.html"
+          >
+            Refund Policy
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyHsPX1y1V5fvseKe_blafB5nxi9HtM4VVJo91d82-3DLO10Pzj-fN7eiJDmniy-Vx9mg/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Thank you for subscribing!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 3000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
