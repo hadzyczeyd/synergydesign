@@ -1,253 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synergydesign is a leading web design agency, making websites accessible for everyone with beautiful, responsive, and SEO-optimized designs.">
+    <meta name="keywords" content="web design, web development, responsive design, custom websites, SEO, accessible websites, digital design">
+    <meta name="author" content="Synergydesign">
+    <meta name="robots" content="index, follow">
 
-    <title>Message Sent - Synergy Design</title>
-    <meta name="title" content="Synergy Design" />
+    <!-- Open Graph Meta Tags for Facebook and LinkedIn -->
+    <meta property="og:title" content="Synergydesign - Web Design Agency">
+    <meta property="og:description" content="Synergydesign creates beautiful, responsive, and accessible websites that help businesses grow.">
+    <meta property="og:image" content="path/to/your/og-image.jpg">
+    <meta property="og:url" content="https://www.synergydesign.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Synergydesign">
 
-    <meta
-      name="description"
-      content="Pomažemo poduzetnicima da pokrenu svoje online poslovanje s jedinstvenim brend identitetom."
-    />
-    <meta
-      name="keywords"
-      content="Web Development, Web Design, Agency, Design, Software, Website, web dizajn, dizajn, logo dizajn, web razvoj"
-    />
-    <meta name="robots" content="index, nofollow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="author" content="Zejd Hadzic" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Synergydesign - Web Design Agency">
+    <meta name="twitter:description" content="Synergydesign creates beautiful, responsive, and accessible websites for everyone.">
+    <meta name="twitter:image" content="visualis-digitalservices.com.png">
 
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="canonical" href="https://www.synergydesign.io">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.synergydesign.io",
+          "name": "Synergydesign",
+          "description": "Synergydesign is a web design agency that creates responsive, accessible websites for everyone.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.synergydesign.io/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+    </script>     
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+
+    <title>Synergy Design</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core@latest"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
             colors: {
-              main: "#118290",
-              scnd: "#98DDE5",
+              primary: '#10B981',
+              secondary: '#1F2937',
+              accent: '#3B82F6',
             },
           },
         },
       };
     </script>
-
+    <script>
+        const burst = new mojs.Burst({
+          radius: { 0: 100 },
+          count: 15,
+          children: {
+            shape: 'circle',
+            radius: 10,
+            fill: 'white',
+            duration: 2000,
+            easing: 'cubic.out'
+          }
+        });
+      
+        burst.play();
+      </script>
     <style>
-      html {
-        font-family: "Bellota Text", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        scroll-behavior: smooth;
-      }
+        html{
+            scroll-behavior: smooth;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
     </style>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   </head>
-  <body class="bg-[#fbf7f5]">
+  <body class="bg-gray-900 text-white">
+    <script>AOS.init();</script>
 
-    <nav x-data="{ isOpen: false }" class="fixed z-20 w-full bg-[#fbf7f5]">
-      <div class="container px-6 py-3 mx-auto md:flex">
-        <div class="flex items-center justify-between">
-          <a
-            class="flex text-main items-center font-semibold justify-center mx-2"
-            href="https://synergydesign.io/index"
-          >
-            <img class="w-auto h-6 md:h-12" src="providna.png" alt="logo" />
-          </a>
-
-          <!-- Mobile menu button -->
-          <div class="flex lg:hidden">
-            <button
-              x-cloak
-              @click="isOpen = !isOpen"
-              type="button"
-              class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
-              aria-label="toggle menu"
-            >
-              <svg
-                x-show="!isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 8h16M4 16h16"
-                />
-              </svg>
-
-              <svg
-                x-show="isOpen"
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div
-          x-cloak
-          :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-          class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-[#fbf7f5] md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
-        >
-          <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-            <a
-              href="https://synergydesign.io/index#Home"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="mx-1 bx bx-home-alt"></i>Home</a
-            >
-            <a
-              href="https://synergydesign.io/index#About"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="mx-1 bx bx-info-circle"></i>About</a
-            >
-            <a
-              href="https://synergydesign.io/index#Why"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="mx-1 bx bx-question-mark"></i>Why Us</a
-            >
-            <a
-              href="https://synergydesign.io/index#Services"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="mx-1 bx bx-wrench"></i>Services</a
-            >
-            <a
-              href="https://calendly.com/synergy-design/consultation-call"
-              target="_blank"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="bx mx-1 bx-conversation"></i>Consultations</a
-            >
-            <a
-              href="https://synergydesign.io/index#Contact"
-              class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform flex items-center justify-center rounded-lg hover:bg-white md:mx-2"
-              ><i class="bx mx-1 bx-envelope"></i>Contact</a
-            >
-          </div>
-
-          <div class="relative mt-4 flex items-center justify-center md:mt-0">
-            <a href="https://synergydesign.io/order"
-              ><button
-                class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-main rounded-lg hover:bg-scnd hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
-              >
-                <i class="mx-1 bx bx-basket"></i>Order
-              </button></a
-            >
-          </div>
-        </div>
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm shadow-md">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a class="flex flex-row items-center justify-center" href="index.html">
+            <img class="w-10" src="logo.png" alt="">
+            <div class="text-xl font-bold text-primary">synergydesign.io</div>
+        </a>
+        <nav>
+          <ul class="hidden md:flex space-x-6 font-medium">
+            <li><a href="index.html" class="hover:text-primary">Home</a></li>
+            <li><a href="index.html#services" class="hover:text-primary">Services</a></li>
+            <li><a href="index.html#pricing" class="hover:text-primary">Prices</a></li>
+            <li><a href="index.html#portfolio" class="hover:text-primary">Portfolio</a></li>
+            <li><a href="index.html#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </header>
 
-    <section class="bg-[#fbf7f5] select-none">
-      <div
-        class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row"
-      >
-        <div class="flex justify-center xl:w-1/2">
-          <img
-            class="h-80 w-80 sm:w-[30rem] sm:h-[30rem] flex-shrink-0 object-contain"
-            src="example-29.png"
-            alt=""
-          />
-        </div>
-
-        <div
-          class="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0"
-        >
-          <h2
-            class="text-3xl font-semibold tracking-tight text-gray-800 xl:text-3xl"
-          >
-            Thanks for contacting us!
-          </h2>
-
-          <p class="block max-w-2xl text-2xl mt-4 text-gray-500">
-            We'll reply as soon as we can.
-          </p>
-
-          <div class="mt-6 sm:-mx-2">
-            <a
-              href="https://synergydesign.io/index"
-              class="inline-flex items-center justify-center font-semibold w-full px-4 text-sm py-2.5 overflow-hidden text-white transition-colors duration-300 bg-main rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-scnd hover:text-black focus:ring focus:ring-gray-300 focus:ring-opacity-80"
-            >
-              <span class="mx-2"> Home </span>
-            </a>
-          </div>
-        </div>
-      </div>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+      <h1 class="text-4xl md:text-6xl font-extrabold my-4 text-white tracking-tight drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" data-aos="fade-up">Message sent successfully!</h1>
+      <p class="text-xl md:text-2xl text-gray-300" data-aos="fade-up" data-aos-delay="200">We'll get back to you as soon as possible.</p>
+      <a href='index.html' class='group mt-8 font-medium tracking-wide select-none text-base relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-0 px-6 rounded-md overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-primary text-white border-primary hover:text-primary focus:text-primary'>
+        <strong class='font-semibold'>home</strong>
+        <span class='absolute bg-white bottom-0 w-0 left-1/2 h-full -translate-x-1/2 transition-all ease-in-out duration-300 group-hover:w-[105%] -z-[1] group-focus:w-[105%]'></span>
+      </a>
     </section>
 
-    <footer class="text-gray-600 bg-bgr fixed w-full bottom-0 body-font">
-      <div
-        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
-      >
-        <a
-          class="flex text-main text-2xl font-semibold items-center justify-center mx-2"
-          href="index.html"
-        >
-          synergy design
-        </a>
-        <p
-          class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
-        >
-          © 2024 synergy —
-          <a
-            href="https://www.instagram.com/synergydesign.io"
-            class="text-main font-semibold ml-1"
-            rel="noopener noreferrer"
-            target="_blank"
-            >@synergydesign.io</a
-          >
-        </p>
-        <span
-          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
-        >
-          <a
-            class="ml-3 text-gray-500 hover:pointer hover:text-white transition-all"
-            href="https://www.freeprivacypolicy.com/live/6000ecf3-644d-4e98-aa22-fa6e3a056249"
-            target="_blank"
-          >
-            Privacy Policy
-          </a>
-
-          <a
-            class="ml-3 text-gray-500 hover:pointer hover:text-white transition-all"
-            target="_blank"
-            href="refund-policy.html"
-          >
-            Refund Policy
-          </a>
-        </span>
-      </div>
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 bg-gray-900">
+      <p>&copy; 2025 SynergyDesign. All rights reserved.</p>
     </footer>
   </body>
 </html>
