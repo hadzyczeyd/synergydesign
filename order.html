@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synergydesign is a leading web design agency, making websites accessible for everyone with beautiful, responsive, and SEO-optimized designs.">
+    <meta name="keywords" content="web design, web development, responsive design, custom websites, SEO, accessible websites, digital design">
+    <meta name="author" content="Synergydesign">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Facebook and LinkedIn -->
+    <meta property="og:title" content="Synergydesign - Web Design Agency">
+    <meta property="og:description" content="Synergydesign creates beautiful, responsive, and accessible websites that help businesses grow.">
+    <meta property="og:image" content="path/to/your/og-image.jpg">
+    <meta property="og:url" content="https://www.synergydesign.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Synergydesign">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Synergydesign - Web Design Agency">
+    <meta name="twitter:description" content="Synergydesign creates beautiful, responsive, and accessible websites for everyone.">
+    <meta name="twitter:image" content="visualis-digitalservices.com.png">
+
+    <link rel="canonical" href="https://www.synergydesign.io">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.synergydesign.io",
+          "name": "Synergydesign",
+          "description": "Synergydesign is a web design agency that creates responsive, accessible websites for everyone.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.synergydesign.io/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+    </script>     
+
+
+    <title>Order - Synergy Design</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core@latest"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              primary: '#10B981',
+              secondary: '#1F2937',
+              accent: '#3B82F6',
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+        const burst = new mojs.Burst({
+          radius: { 0: 100 },
+          count: 15,
+          children: {
+            shape: 'circle',
+            radius: 10,
+            fill: 'white',
+            duration: 2000,
+            easing: 'cubic.out'
+          }
+        });
+      
+        burst.play();
+      </script>
+    <style>
+        html{
+            scroll-behavior: smooth;
+            font-family: 'Poppins', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        body{
+            overflow-x: hidden;
+        }
+        
+        body::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+body::-webkit-scrollbar-track {
+    background-color: oklch(21% 0.034 264.665);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #10B981;
+}
+    </style>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <script>AOS.init();</script>
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm shadow-md">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a class="flex flex-row items-center justify-center" href="index.html">
+            <img class="w-10" src="logo.png" alt="">
+            <div class="text-xl font-bold text-primary">synergydesign.io</div>
+        </a>
+        <nav>
+          <ul class="hidden md:flex space-x-6 font-medium">
+            <li><a href="index.html" class="hover:text-primary">Home</a></li>
+            <li><a href="index.html#services" class="hover:text-primary">Services</a></li>
+            <li><a href="index.html#pricing" class="hover:text-primary">Prices</a></li>
+            <li><a href="index.html#portfolio" class="hover:text-primary">Portfolio</a></li>
+            <li><a href="index.html#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+      
+
+<section id="order" class="py-20 px-4 mt-12">
+  <div class="max-w-3xl mx-auto bg-gray-800 rounded-2xl p-8 shadow-md">
+    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Place an Order</h3>
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <input
+        type="hidden"
+        name="apikey"
+        value="ee898561-a32b-46f9-97a7-500ab48f7798"
+      />
+      <input type="hidden" name="subject" value="New order placed" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      <input type="hidden" name="redirect" value="https://synergydesign.io/thanks.html">
+
+      <!-- Name and Email -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="bg-gray-700 text-white px-4 py-3 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="bg-gray-700 text-white px-4 py-3 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+      </div>
+
+      <!-- Plan Selector -->
+      <select
+        name="selected_plan"
+        required
+        class="bg-gray-700 text-white px-4 py-3 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-primary"
+      >
+        <option value="" disabled selected>Select Your Website Plan</option>
+        <option value="Basic Plan - $59">Basic Plan – $59</option>
+        <option value="Standard Plan - $89">Standard Plan – $89</option>
+        <option value="Shop Plan - $149">Shop Plan – $149</option>
+      </select>
+
+
+      <!-- Project Details -->
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Tell us more about your project..."
+        class="bg-gray-700 text-white px-4 py-3 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-primary"
+      ></textarea>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="bg-primary hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl w-full transition-colors"
+      >
+        Submit Order
+      </button>
+    </form>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 bg-gray-900">
+      <p>&copy; 2025 SynergyDesign. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
